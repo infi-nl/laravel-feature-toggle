@@ -7,6 +7,8 @@ use JoshuaEstes\Component\FeatureToggle\FeatureContainer;
 class LaravelFeatureToggleServiceProvider extends ServiceProvider
 {
 
+    private $_packageName = "laravel-feature-toggle";
+
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -21,7 +23,7 @@ class LaravelFeatureToggleServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('infi-nl/laravel-feature-toggle');
+        $this->package(sprintf('infi-nl/%s', $this->_packageName));
     }
 
     /**
@@ -33,7 +35,9 @@ class LaravelFeatureToggleServiceProvider extends ServiceProvider
     {
         $this->app['laravel-feature-container'] = $this->app->share(function($app)
         {
-            $configRepository = new ConfigRepository($app["config"]["feature"]);
+            $configPath       = sprintf("%s::feature", $this->_packageName);
+
+            $configRepository = new ConfigRepository($app["config"][$configPath]);
 
             $features         = array();
             foreach( $configRepository->all() as $f ) {
@@ -51,8 +55,6 @@ class LaravelFeatureToggleServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        var_dump("WERWER"); die;
         return array('laravel-feature-container');
     }
-
 }

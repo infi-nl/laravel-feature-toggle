@@ -1,7 +1,6 @@
 <?php
 namespace InfiNl\LaravelFeatureToggle\Repository;
 
-use JoshuaEstes\Component\FeatureToggle\Feature;
 use JoshuaEstes\Component\FeatureToggle\FeatureBuilder;
 use JoshuaEstes\Component\FeatureToggle\FeatureContainer;
 use JoshuaEstes\Component\FeatureToggle\FeatureInterface;
@@ -22,9 +21,12 @@ class ConfigRepository implements RepositoryInterface {
      */
     public function get($key)
     {
-        $isFeatureAvailable = (!empty($this->_features[$key]));
+        $isFeatureAvailable = !empty($this->_features[$key]);
+        if (!$isFeatureAvailable) {
+            throw new \Exception(sprintf("No such feature '%s'", $key));
+        }
 
-        return $isFeatureAvailable ? $this->_features[$key] : null;
+        return $this->_features[$key];
     }
 
     /**
