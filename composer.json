@@ -1,6 +1,10 @@
 {
     "name": "infi-nl/laravel-feature-toggle",
-    "description": "",
+    "description": "Laravel 4 package wrapping joshuaestes/feature-toggle",
+    "license": "MIT",
+    "keywords": [
+        "laravel", "feature", "toggle", ""
+    ],
     "authors": [
         {
             "name": "Ely Deckers",
