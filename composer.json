@@ -16,10 +16,11 @@
         "illuminate/support": "4.1.*",
         "joshuaestes/feature-toggle": "0.1.*"
     },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "squizlabs/php_codesniffer": "1.*"
+    },
     "autoload": {
-        "classmap": [
-            "src/migrations"
-        ],
         "psr-0": {
             "InfiNl\\LaravelFeatureToggle\\": "src/"
         }

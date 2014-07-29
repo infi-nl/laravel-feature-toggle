@@ -39,12 +39,7 @@ class LaravelFeatureToggleServiceProvider extends ServiceProvider
 
             $configRepository = new ConfigRepository($app["config"][$configPath]);
 
-            $features         = array();
-            foreach( $configRepository->all() as $f ) {
-                $features[] = $f;
-            }
-
-            return new FeatureContainer($features);
+            return new FeatureContainer($configRepository->all());
         });
     }
 

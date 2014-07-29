@@ -5,6 +5,7 @@ use JoshuaEstes\Component\FeatureToggle\FeatureBuilder;
 use JoshuaEstes\Component\FeatureToggle\FeatureContainer;
 use JoshuaEstes\Component\FeatureToggle\FeatureInterface;
 use JoshuaEstes\Component\FeatureToggle\Repository\RepositoryInterface;
+use JoshuaEstes\Component\FeatureToggle\Toggle\FeatureToggleGeneric;
 
 class ConfigRepository implements RepositoryInterface {
 
@@ -23,7 +24,7 @@ class ConfigRepository implements RepositoryInterface {
     {
         $isFeatureAvailable = !empty($this->_features[$key]);
         if (!$isFeatureAvailable) {
-            throw new \Exception(sprintf("No such feature '%s'", $key));
+            throw new \OutOfBoundsException(sprintf("No such feature '%s'", $key));
         }
 
         return $this->_features[$key];
@@ -68,17 +69,22 @@ class ConfigRepository implements RepositoryInterface {
     private function _initializeFeatures(array $features) {
         $this->_features = array();
         foreach( $features as $name => $settings ) {
-            $feature = FeatureBuilder::create($name)->getFeature();
 
-            $this->_applySettings($feature, $settings);
+            $toggle  = new FeatureToggleGeneric($settings);
+            $feature =
+                FeatureBuilder::create($name)
+                    ->setFeatureToggle($toggle)
+                    ->getFeature();
 
-            $this->_features[] = $feature;
+            //$this->_applySettings($feature, $settings);
+
+            $this->_features[$name] = $feature;
         }
     }
 
-    private function _applySettings(FeatureInterface $feature, array $settings) {
+    /*private function _applySettings(FeatureInterface $feature, array $settings) {
         foreach( $settings as $setting => $value ) {
             $feature->getToggle()->setOption($setting, $value);
         }
-    }
+    }*/
 }
