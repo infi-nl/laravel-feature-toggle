@@ -3,7 +3,7 @@
     "description": "Laravel 4 package wrapping joshuaestes/feature-toggle",
     "license": "MIT",
     "keywords": [
-        "laravel", "feature", "toggle", ""
+        "laravel", "feature", "toggle"
     ],
     "authors": [
         {
