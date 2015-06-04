@@ -12,7 +12,7 @@ Add the following line to the `require` section of `composer.json`:
 ```json
 {
     "require": {
-        "infi-nl/laravel-feature-toggle": "dev-master"
+        "infi-nl/laravel-feature-toggle": "5.0.*"
     }
 }
 ```
@@ -23,13 +23,7 @@ Add the following line to the `require` section of `composer.json`:
 
 ## Configuration
 
-In order to use the library publish its configuration first
-
-```php
-artisan config:publish infi-nl/laravel-feature-toggle
-```
-
-Afterwards edit the file app/config/packages/infi-nl/laravel-feature-toggle/feature.php to suit your needs.
+Create the file <app_root>/config/packages/infi-nl/laravel-feature-toggle/feature.php and modify it to suit your needs.
 
 The configuration file must be formatted like this:
 ```php
@@ -63,5 +57,5 @@ $feature->isEnabled();
 ```
 
 ### More examples
-The examples above display only very basic usage of the library, for more advanced examples and detailed information on the library check the [JoshuaEstes/FeatureToggle](JoshuaEstes/FeatureToggle) repository. 
+The examples above display only very basic usage of the library, for more advanced examples and detailed information on the library check the [JoshuaEstes/FeatureToggle](https://github.com/JoshuaEstes/FeatureToggle) repository. 
 

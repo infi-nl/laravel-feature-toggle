@@ -1,6 +1,6 @@
 {
     "name": "infi-nl/laravel-feature-toggle",
-    "description": "Laravel 4 package wrapping joshuaestes/feature-toggle",
+    "description": "Laravel 5 package wrapping joshuaestes/feature-toggle",
     "license": "MIT",
     "keywords": [
         "laravel", "feature", "toggle"
@@ -8,21 +8,20 @@
     "authors": [
         {
             "name": "Ely Deckers",
-            "email": "ely@infi.nl"
+            "email": "ely.deckers@infi.nl"
         }
     ],
     "require": {
         "php": ">=5.3.0",
-        "illuminate/support": "4.1.*",
-        "joshuaestes/feature-toggle": "0.1.*"
+        "joshuaestes/feature-toggle": "0.3.*"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*",
         "squizlabs/php_codesniffer": "1.*"
     },
     "autoload": {
-        "psr-0": {
-            "InfiNl\\LaravelFeatureToggle\\": "src/"
+        "psr-4": {
+            "InfiNl\\LaravelFeatureToggle\\": "src/InfiNl/LaravelFeatureToggle"
         }
     },
     "minimum-stability": "stable"

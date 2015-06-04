@@ -1,7 +1,6 @@
 <?php namespace InfiNl\LaravelFeatureToggle;
 
 use Illuminate\Support\ServiceProvider;
-use InfiNl\LaravelFeatureToggle\Repository\ConfigRepository;
 use JoshuaEstes\Component\FeatureToggle\FeatureContainer;
 
 class LaravelFeatureToggleServiceProvider extends ServiceProvider
@@ -23,7 +22,7 @@ class LaravelFeatureToggleServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package(sprintf('infi-nl/%s', $this->_packageName));
+        //$this->package(sprintf('infi-nl/%s', $this->_packageName));
     }
 
     /**
@@ -33,13 +32,13 @@ class LaravelFeatureToggleServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['laravel-feature-container'] = $this->app->share(function($app)
-        {
-            $configPath       = sprintf("%s::feature", $this->_packageName);
+        $this->app['laravel-feature-container'] = $this->app->share(function($app) {
+            $configPath     = sprintf("packages.infi-nl.%s.feature", $this->_packageName);
+            $featureConfigs = $app["config"]->get($configPath) ?: array();
 
-            $configRepository = new ConfigRepository($app["config"][$configPath]);
+            $features       = LaravelFeatureBuilder::fromFeatureConfigs($featureConfigs);
 
-            return new FeatureContainer($configRepository->all());
+            return new FeatureContainer($features);
         });
     }
 
