@@ -2,6 +2,8 @@ Laravel Feature Toggle
 ======================
 
 [![Travis CI](https://travis-ci.org/infi-nl/laravel-feature-toggle.svg)](https://travis-ci.org/infi-nl/laravel-feature-toggle)
+[![Total Downloads](https://poser.pugx.org/infi-nl/laravel-feature-toggle/downloads.svg)](https://packagist.org/packages/infi-nl/laravel-feature-toggle)
+[![License](https://poser.pugx.org/infi-nl/laravel-feature-toggle/license.svg)](https://packagist.org/packages/infi-nl/laravel-feature-toggle)
 
 Laravel wrapper for [JoshuaEstes/FeatureToggle](https://github.com/JoshuaEstes/FeatureToggle), a library which allows you to easily add and modify various features to your code while in development.
 
