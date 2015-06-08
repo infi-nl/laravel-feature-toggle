@@ -1,4 +1,4 @@
-<?php namespace MetalMatze;
+<?php namespace InfiNl\LaravelFeatureToggle\Tests;
 
 use InfiNl\LaravelFeatureToggle\Repository\ConfigRepository;
 use JoshuaEstes\Component\FeatureToggle\FeatureContainer;
