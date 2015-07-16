@@ -11,12 +11,6 @@
             "email": "ely.deckers@infi.nl"
         }
     ],
-    "repositories": [
-      {
-        "type": "git",
-        "url": "https://github.com/infi-nl/FeatureToggle"
-      }
-    ],
     "require": {
         "php": ">=5.3.0",
         "joshuaestes/feature-toggle": "dev-master"
