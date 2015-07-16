@@ -14,7 +14,7 @@ Add the following line to the `require` section of `composer.json`:
 ```json
 {
     "require": {
-        "infi-nl/laravel-feature-toggle": "dev-master"
+        "infi-nl/laravel-feature-toggle": "4.0.*"
     }
 }
 ```
@@ -65,5 +65,5 @@ $feature->isEnabled();
 ```
 
 ### More examples
-The examples above display only very basic usage of the library, for more advanced examples and detailed information on the library check the [JoshuaEstes/FeatureToggle](JoshuaEstes/FeatureToggle) repository. 
+The examples above display only very basic usage of the library, for more advanced examples and detailed information on the library check the [JoshuaEstes/FeatureToggle](https://github.com/JoshuaEstes/FeatureToggle) repository. 
 
