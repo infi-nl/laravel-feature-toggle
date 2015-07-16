@@ -14,7 +14,7 @@ Add the following line to the `require` section of `composer.json`:
 ```json
 {
     "require": {
-        "infi-nl/laravel-feature-toggle": "5.0.*"
+        "infi-nl/laravel-feature-toggle": "dev-master"
     }
 }
 ```
