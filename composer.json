@@ -11,12 +11,6 @@
             "email": "ely@infi.nl"
         }
     ],
-    "repositories": [
-      {
-        "type": "git",
-        "url": "https://github.com/infi-nl/FeatureToggle"
-      }
-    ],
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.1.*",
