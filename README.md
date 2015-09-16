@@ -29,7 +29,8 @@ Create the file <app_root>/config/packages/infi-nl/laravel-feature-toggle/featur
 
 The configuration file must be formatted like this:
 ```php
-array(
+<?php
+return array(
 	"featureName1" => array(
 		"enabled"      => true
 	),
@@ -37,7 +38,7 @@ array(
 	"featureNameN" => array(
 		"enabled"      => false
 	)
-)
+);
 ```
 
 ## Usage
